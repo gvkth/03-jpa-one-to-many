@@ -42,6 +42,13 @@ public class AppDAOImpl implements AppDAO{
         //retrieve the instructor
         Instructor tempInstructor = entityManager.find(Instructor.class,theId);
 
+        List<Course> courses = tempInstructor.getCourses();
+
+        //break associations of all courses for instructor
+        for (Course tempCourse: courses){
+            tempCourse.setInstructor(null);
+        }
+
         //delete the instructor
         entityManager.remove(tempInstructor);//MAGIC: this will ALSO delete the instructor details object because of CascadeType.ALL
     }
@@ -57,7 +64,7 @@ public class AppDAOImpl implements AppDAO{
 
         InstructorDetail tempInstructorDetail = entityManager.find(InstructorDetail.class,theId);
 
-        //remove the associated object
+        //remove the associated object, not delete courses
         tempInstructorDetail.getInstructor().setInstructorDetail(null);
 
         entityManager.remove(tempInstructorDetail);
@@ -94,4 +101,6 @@ public class AppDAOImpl implements AppDAO{
     public void update(Instructor tempInstructor) {
         entityManager.merge(tempInstructor);
     }
+
+
 }

@@ -24,13 +24,13 @@ public class CruddemoApplication {
 			//System.out.println("Hello World");
 //			createInstructor(appDAO);
 //			findInstructor(appDAO);
-//			removeInstructor(appDAO);
+			removeInstructor(appDAO);
 //			findInstructorDetail(appDAO);
 //			removeInstructorDetail(appDAO);
 //			createInstructorWithCourses(appDAO);
 //			findInstructorWithCourses(appDAO);
 //			findCoursesForInstructorJoinFetch(appDAO);
-			updateInstructor(appDAO);
+//			updateInstructor(appDAO);
 		};
 	}
 
