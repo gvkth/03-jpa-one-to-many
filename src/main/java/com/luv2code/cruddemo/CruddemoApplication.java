@@ -24,14 +24,24 @@ public class CruddemoApplication {
 			//System.out.println("Hello World");
 //			createInstructor(appDAO);
 //			findInstructor(appDAO);
-			removeInstructor(appDAO);
+//			removeInstructor(appDAO);
 //			findInstructorDetail(appDAO);
 //			removeInstructorDetail(appDAO);
 //			createInstructorWithCourses(appDAO);
 //			findInstructorWithCourses(appDAO);
 //			findCoursesForInstructorJoinFetch(appDAO);
 //			updateInstructor(appDAO);
+			deleteCourseById(appDAO);
 		};
+	}
+
+	private void deleteCourseById(AppDAO appDAO) {
+		int theId = 10;
+		System.out.println("Deleteing course id: "+theId);
+
+		appDAO.deleteCourseById(theId);
+
+		System.out.println("Done!");
 	}
 
 	private void updateInstructor(AppDAO appDAO) {
