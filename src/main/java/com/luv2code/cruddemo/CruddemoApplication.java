@@ -57,7 +57,7 @@ public class CruddemoApplication {
 		//find courses for instructor
 		List<Course> courseList=appDAO.findCoursesByInstructorId(theId);
 		tempInstructor.setCourses(courseList);
-		System.out.println("the associated courses: "+tempInstructor.getCourses());
+		//System.out.println("the associated courses: "+tempInstructor.getCourses());
 
 		//associate the objects
 		tempInstructor.setCourses(courseList);
